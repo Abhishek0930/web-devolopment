@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(88, 88, 88);
+}
+h1{
+    text-align: center;
+    color:honeydew;
+    font-family: cursive;
+}
+div{
+    color: lavender;
+    background-color: rgb(125, 178, 185);
+    padding: 5px;
+    position: sticky;
+    top: 10px;
+}
+tr:nth-child(even){
+    background-color:grey;
+}
+tr:nth-child(odd){
+    background-color: silver;
+}
+table{
+    border: 1px;
+    width: 97%;
+    text-align: left;
+    margin: 20px;
+    border-bottom: slategray;
+}
+th{
+    background-color: slategray;
+}
+address{
+    text-align: right;
+    color: honeydew;
+}
