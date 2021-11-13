@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="admission form.css">
+
+</head>
+<body>
+  <div style="display: block; width: auto; border: 2px solid white;">
+		<h3 style="margin: auto; text-align: center; display: block;width: 200px;">SUNSHINE ACADEMY <br>PURKAZI</h3>
+		<img  src="logo sunshine.png" style="margin: auto; height: 50px;width: 50px;border-radius: 50%;display: block;" alt="">
+	</div>
+<div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Sunshine Academy <br> Fee Submission Portal</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form method="post" autocomplete="off" name="google-sheet" id="google-sheet">
+                                        <div class="form-group">
+                                            <input type="text" name="Sr. No." class="form-control" placeholder="Sr number of the student *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Student's Name" class="form-control" placeholder="Name of the student *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Class" class="form-control" placeholder="Admitted class of the student *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                          <input type="number" name="Adhaar card Number of student" class="form-control" placeholder = "Adhar card number of the student *" value=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="date" name="Date of Birth" class="form-control" placeholder = "Date of Birth of Student *" value=""/>
+                                          </div>
+                                        <div class="form-group">
+                                          <input type="number" name="Admission Fee" class="form-control" placeholder="Admission Fee of the student *" value=""/>
+                                      </div>
+                                        <div class="form-group">
+                                          <input type="number" name="School Fee" class="form-control" placeholder="School Fee (If Any) *" value="" required=""/>
+                                      </div>
+                                      <div class="form-group">
+                                        <input type="number" name="Transport Fee" class="form-control" placeholder="Transportation Fee (If Any) *" value="" required=""/>
+                                    </div>
+                                    <div class="form-group">
+                                      <input type="text" name="Father's Name" class="form-control" placeholder="Father's Name *" value=""/>
+                                  </div>
+                                        <div class="form-group">
+                                            <input type="number" name="Phone No." class="form-control" placeholder="Father's Contact Number *" value=""/>
+                                        </div>
+                                        <div class="form-group">
+                                          <input type="number" name="Recipt Number" class="form-control" placeholder="Recipt number *" value=""/>
+                                      </div>
+                                        <div class="form-group">
+                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="Submit Fee" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+          
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxYG1LMTDXYSCjvxSxoVthl4axyeCTnJMc03np1u5iGVdZsfGZF6pcv4_RnSgqOEFTLFw/exec" frameborder="0" style="width: 100%;height: 600px;'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(Response => alert("form submitted successfully")).then(myFunction())
+                .catch(error => console.error('Error!', error.message))
+            })
+            
+function myFunction() {
+  document.getElementById("google-sheet").reset();}
+          </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
+
+
+
+
+
